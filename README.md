@@ -47,15 +47,19 @@ exports.config = config;
 Protractor config file and spec example are provided in example folder. 
 
 ```
-protractor-build-verification-testreport
-  /example
-    conf.js
-    spec.js
+<YourNodeProject>
+  ... 
+  /node_modules
+      /protractor-build-verification-testreport
+          /example/
+            conf.js
+            spec.js
 ```
 
 ### Run test
 ```
-$ cd example
+$ cd <YourNodeProject>
+$ cd node_modules/protractor-build-verification-testreport/example
 $ protractor conf.js
 ```
 
@@ -66,14 +70,17 @@ After you successfully run the spec example, you should get "3 specs, 1 failure"
 The screenshots folder consists of a collection of generated HTML files. The number of the HTML files depends on the number of your specs. Each spec will generate one HTML test report. With this example, protractor-build-verification-testreport will generate 3 HTML files. 
 
 ```
-protractor-build-verification-testreport
-  /example
-     conf.js
-     spec.js
-     /screenshot
-        failed_LINUX_chrome_47.0.2526.106_Wed Jan 01 2016 16:33:17 GMT+0700 (ICT).html
-        passed_LINUX_chrome_47.0.2526.106_Wed Jan 01 2016 16:33:11 GMT+0700 (ICT).html
-        passed_LINUX_chrome_47.0.2526.106_Wed Jan 01 2016 16:33:14 GMT+0700 (ICT).html
+<YourNodeProject>
+  ... 
+  /node_modules
+      /protractor-build-verification-testreport
+          /example/
+             conf.js
+             spec.js
+             /screenshot
+                  failed_LINUX_chrome_47.0.2526.106_Wed Jan 01 2016 16:33:17 GMT+0700 (ICT).html
+                  passed_LINUX_chrome_47.0.2526.106_Wed Jan 01 2016 16:33:11 GMT+0700 (ICT).html
+                  passed_LINUX_chrome_47.0.2526.106_Wed Jan 01 2016 16:33:14 GMT+0700 (ICT).html
 ```
 
 ### Information in the file
