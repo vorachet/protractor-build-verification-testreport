@@ -20,7 +20,7 @@ describe('Protractor Demo App', function() {
     expect(latestResult.getText()).toEqual('3');
   });
 
-  it('should add one and two (This test case mocks failed status)', function() {
+  it('should add one and two (This test case intentionally mocks failed status)', function() {
     firstNumber.sendKeys(1);
     secondNumber.sendKeys(2);
     goButton.click();

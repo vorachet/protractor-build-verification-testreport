@@ -1,7 +1,7 @@
 {
-  "name": "attanomat-protractor-screenshot",
+  "name": "protractor-build-verification-testreport",
   "version": "0.0.1",
-  "description": "attanomat-protractor-screenshot generates screenshot and test summary HTML on each test run",
+  "description": "A Node.js module used to generate readability HTML test report based on Protractor environment",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -9,7 +9,8 @@
   },
   "keywords": [
     "Protractor",
-    "Screenshot"
+    "Screenshot",
+    "Build verification test",
   ],
   "author": "Vorachet Jaroensawas <vorachet@gmail.com> (https://github.com/vorachet)",
   "license": "MIT",
@@ -18,6 +19,5 @@
   },
   "homepage": "https://github.com/vorachet/attanomat-protractor-screenshot#readme",
   "dependencies": {
-    "mkdirp": "^0.5.1"
   }
 }

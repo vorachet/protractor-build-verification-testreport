@@ -1,15 +1,13 @@
- 'use strict';
+'use strict';
 
- var fs = require('fs'),
-     mkdirp = require('mkdirp');
+var fs = require('fs');
 
-var AttanomatProtractorScreenshot = function() {
+var ProtractorBuildVerificationTestReport = function() {
 };
 
-AttanomatProtractorScreenshot.prototype.onPrepare = function() {
+ProtractorBuildVerificationTestReport.prototype.onPrepare = function() {
     jasmine.getEnv().addReporter({
           specDone: function(result) {
-            
             var screenshotDir = './screenshots';  
             browser.takeScreenshot().then(function(base64png) {
               browser.getCapabilities().then(function(s) { 
@@ -59,18 +57,18 @@ AttanomatProtractorScreenshot.prototype.onPrepare = function() {
                 var descriptionFileName = imageFileName;
                 var screenshotDescriptionFilePath = screenshotDir + '/' + descriptionFileName + '.html';
                 
-                mkdirp(screenshotDir, function(err) {
-                      var streamDesc = fs.createWriteStream(screenshotDescriptionFilePath);
-                      streamDesc.write(description);
-                      streamDesc.end();
-                      console.log('New test report has been created at ' + screenshotDescriptionFilePath);
-                      return true;
-                    });
+                      if (!fs.existsSync(screenshotDir)){
+                          fs.mkdirSync(screenshotDir);
+                      }
+                      
+                      fs.writeFileSync(screenshotDescriptionFilePath, description);
+                      console.log('New test report has been created at ' + 
+                                      screenshotDescriptionFilePath);
                 });
             });
           }
     });
 }
 
-module.exports = new AttanomatProtractorScreenshot();
-module.exports.AttanomatProtractorScreenshot = AttanomatProtractorScreenshot;
+module.exports = new ProtractorBuildVerificationTestReport();
+module.exports.ProtractorBuildVerificationTestReport = ProtractorBuildVerificationTestReport;
