@@ -1,24 +1,44 @@
-# attanomat-protractor-screenshot
+# protractor-build-verification-testreport
+
+Build verification test (Smoke testing ,Confidence testing, Sanity testing) is done by testers before accepting a new build. Build verification test is also one of the most cost-effective method for identifying and fixing defects in software.  
+
+**protractor-build-verification-testreport** provides a Node.js module used to generate readability HTML test report based on Protractor environment.  If Protractor is a part of your test equipments in your build verification test process, **protractor-build-verification-testreport** could help you managing E2E test report effectively.
+
+![Logo](https://github.com/vorachet/attanomat-protractor-screenshot/raw/master/demo.gif)
 
 ## Install 
 
 ```
-npm install attanomat-protractor-screenshot --save 
+npm install protractor-build-verification-testreport --save 
 ```
 
-## Configure attanomat-protractor-screenshot in your Protractor config file
+## Configure protractor-build-verification-testreport in Protractor config file
 
 ```
-var attanomatProtractorScreenshot = require('attanomat-protractor-screenshot');
-
+var verTestReport = require('protractor-build-verification-testreport');
 var config = {
   ...
-  onPrepare: attanomatProtractorScreenshot.onPrepare,
+  onPrepare: verTestReport.onPrepare,
 };
 
 exports.config = config;
 ```
 
+A Protractor config file example in our example folder 
+```
+var verTestReport = require('protractor-build-verification-testreport);
+var config = {
+  seleniumAddress: process.env.SELENIUM_ADDRESS || 'http://localhost:4444/wd/hub',
+  capabilities: {
+    'browserName': 'chrome'
+  },
+  framework: 'jasmine2',
+  specs: ['spec.js'],
+  onPrepare: verTestReport.onPrepare,
+};
+
+exports.config = config;
+```
 ## Learning by example 
 
 ### Spec example 
@@ -41,7 +61,7 @@ $ protractor conf.js
 
 After you successfully run the spec example, you should get "3 specs, 1 failure" and a new folder named "screenshots" will be created after the Protractor job is done. The spec example intentially writes test cases for 2 passed and 1 failed. 
 
-The screenshots folder consists of a collection of HTML and PNG files. The number of the files depends on the number of your specs. Each spec will generate one HTML test report. With this example, attanomat-protractor-screenshot will generate 3 HTML files. 
+The screenshots folder consists of a collection of HTML and PNG files. The number of the files depends on the number of your specs. Each spec will generate one HTML test report. With this example, protractor-build-verification-testreport will generate 3 HTML files. 
 
 ```
   example
@@ -71,12 +91,12 @@ The content consists of two parts
  1. Test information including TestDate, SpecStatus, SpecDescription, SpecFullName, Platform, and Browser.
  2. Screenshort using base64 image inline
 
-![Logo](https://github.com/vorachet/attanomat-protractor-screenshot/raw/master/example.jpg)
+![Logo](https://github.com/vorachet/protractor-build-verification-testreport/raw/master/example.jpg)
 
-## Doing Build verification test with attanomat-protractor-screenshot
+## Doing Build verification test with protractor-build-verification-testreport
 
 Build verification testSmoke testing (Smoke testing ,Confidence testing, Sanity testing) is done by testers before accepting a new build. It is also one of the most cost-effective method for identifying and fixing defects in software.  
 
-attanomat-protractor-screenshot offers a very small node.js module to generate readability E2E test report. The generated HTML files will be saved in the screenshots folder appendly. The content of the report is adequate for precise communication among developers and testers.  You can choose to attach the generate test report in your software configuration management software. 
+protractor-build-verification-testreport offers a very small node.js module to generate readability E2E test report. The generated HTML files will be saved in the screenshots folder appendly. The content of the report is adequate for precise communication among developers and testers.  You can choose to attach the generate test report in your software configuration management software. 
 
 

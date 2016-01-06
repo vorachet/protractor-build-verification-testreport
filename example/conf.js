@@ -1,5 +1,5 @@
-var attanomatProtractorScreenshot = require('../index.js'); 
-/* Use require('attanomat-protractor-screenshot') if you installed attanomat-protractor-screenshot via npm */
+var verTestReport = require('../index.js');
+/* Use require('protractor-build-verification-testreport) if you installed protractor-build-verification-testreport via npm */
 
 var config = {
   seleniumAddress: process.env.SELENIUM_ADDRESS || 'http://localhost:4444/wd/hub',
@@ -8,7 +8,7 @@ var config = {
   },
   framework: 'jasmine2',
   specs: ['spec.js'],
-  onPrepare: attanomatProtractorScreenshot.onPrepare,
+  onPrepare: verTestReport.onPrepare,
 };
 
 exports.config = config;
