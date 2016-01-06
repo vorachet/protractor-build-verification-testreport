@@ -21,6 +21,7 @@ ProtractorBuildVerificationTestReport.prototype.onPrepare = function() {
                   version: s.caps_.version || 'undefined',
                 };
 
+                var color = testResultOnEachSpec.specStatus === 'passed' ? 'green' : 'red';
                 var testDate = new Date();
 
                 var imageFileName = testResultOnEachSpec.specStatus + '_' +
@@ -45,7 +46,8 @@ ProtractorBuildVerificationTestReport.prototype.onPrepare = function() {
                   '\t</head>\n' + 
                   '\t<body>\n' +
                   '\t\t<p><b>TestDate</b> = ' + testDate + '</p>\n' + 
-                  '\t\t<p><b>SpecStatus</b> = ' + testResultOnEachSpec.specStatus + '</p>\n' + 
+                  '\t\t<p style="color:' + color + '"><b>SpecStatus</b> = ' + 
+                      testResultOnEachSpec.specStatus + '</p>\n' + 
                   '\t\t<p><b>SpecDescription</b> = ' + testResultOnEachSpec.specDescription + '</p>\n' + 
                   '\t\t<p><b>SpecFullName</b> = ' +  testResultOnEachSpec.specFullName + '</p>\n' + 
                   '\t\t<p><b>Platform</b> = ' + testResultOnEachSpec.platform + '</p>\n' + 

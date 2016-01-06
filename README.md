@@ -77,7 +77,7 @@ The screenshots folder consists of a collection of generated HTML files. The num
           /example/
              conf.js
              spec.js
-             /screenshot
+             /screenshots
                   failed_LINUX_chrome_47.0.2526.106_Wed Jan 01 2016 16:33:17 GMT+0700 (ICT).html
                   passed_LINUX_chrome_47.0.2526.106_Wed Jan 01 2016 16:33:11 GMT+0700 (ICT).html
                   passed_LINUX_chrome_47.0.2526.106_Wed Jan 01 2016 16:33:14 GMT+0700 (ICT).html
