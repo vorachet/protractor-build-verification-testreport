@@ -1,0 +1,23 @@
+{
+  "name": "attanomat-protractor-screenshot",
+  "version": "0.0.1",
+  "description": "attanomat-protractor-screenshot generates screenshot and test summary HTML on each test run",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vorachet/attanomat-protractor-screenshot.git"
+  },
+  "keywords": [
+    "Protractor",
+    "Screenshot"
+  ],
+  "author": "Vorachet Jaroensawas <vorachet@gmail.com> (https://github.com/vorachet)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vorachet/attanomat-protractor-screenshot/issues"
+  },
+  "homepage": "https://github.com/vorachet/attanomat-protractor-screenshot#readme",
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  }
+}
