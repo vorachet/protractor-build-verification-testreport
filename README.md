@@ -2,7 +2,7 @@
 
 Build verification test (Smoke testing ,Confidence testing, Sanity testing) is done by testers before accepting a new build. Build verification test is also one of the most cost-effective method for identifying and fixing defects in software.  
 
-**protractor-build-verification-testreport** provides a Node.js module used to generate readability HTML test report based on Protractor environment.  If Protractor is a part of your test equipments in your build verification test process, **protractor-build-verification-testreport** could help you managing E2E test report effectively.
+**protractor-build-verification-testreport** provides a Node.js module used to generate readability HTML test report based on Protractor environment.  If Protractor is an equipment in your build verification test process, **protractor-build-verification-testreport** could help you doing test report tasks effectively.
 
 ![Logo](https://github.com/vorachet/attanomat-protractor-screenshot/raw/master/demo.gif)
 
@@ -47,9 +47,10 @@ exports.config = config;
 Protractor config file and spec example are provided in example folder. 
 
 ```
-  example
-     conf.js
-     spec.js
+protractor-build-verification-testreport
+  /example
+    conf.js
+    spec.js
 ```
 
 ### Run test
@@ -62,13 +63,14 @@ $ protractor conf.js
 
 After you successfully run the spec example, you should get "3 specs, 1 failure" and a new folder named "screenshots" will be created after the Protractor job is done. The spec example intentially writes test cases for 2 passed and 1 failed. 
 
-The screenshots folder consists of a collection of HTML and PNG files. The number of the files depends on the number of your specs. Each spec will generate one HTML test report. With this example, protractor-build-verification-testreport will generate 3 HTML files. 
+The screenshots folder consists of a collection of generated HTML files. The number of the HTML files depends on the number of your specs. Each spec will generate one HTML test report. With this example, protractor-build-verification-testreport will generate 3 HTML files. 
 
 ```
-  example
+protractor-build-verification-testreport
+  /example
      conf.js
      spec.js
-     screenshot
+     /screenshot
         failed_LINUX_chrome_47.0.2526.106_Wed Jan 01 2016 16:33:17 GMT+0700 (ICT).html
         passed_LINUX_chrome_47.0.2526.106_Wed Jan 01 2016 16:33:11 GMT+0700 (ICT).html
         passed_LINUX_chrome_47.0.2526.106_Wed Jan 01 2016 16:33:14 GMT+0700 (ICT).html
@@ -96,8 +98,6 @@ The content consists of two parts
 
 ## Doing Build verification test with protractor-build-verification-testreport
 
-Build verification testSmoke testing (Smoke testing ,Confidence testing, Sanity testing) is done by testers before accepting a new build. It is also one of the most cost-effective method for identifying and fixing defects in software.  
-
-protractor-build-verification-testreport offers a very small node.js module to generate readability E2E test report. The generated HTML files will be saved in the screenshots folder appendly. The content of the report is adequate for precise communication among developers and testers.  You can choose to attach the generate test report in your software configuration management software. 
+protractor-build-verification-testreport offers a very small node.js module to generate readability E2E test report. The generated HTML files will be saved in the screenshots folder and you can choose to share the screenshots folder as deployment acceptance criteria among the project team. The content of the report is adequate for precise communication with general web application testing.  You can also choose to attach the test report into your software configuration management software. 
 
 
