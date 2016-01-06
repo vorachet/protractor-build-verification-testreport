@@ -12,8 +12,9 @@ Build verification test (Smoke testing ,Confidence testing, Sanity testing) is d
 npm install protractor-build-verification-testreport --save 
 ```
 
-## Configure protractor-build-verification-testreport in Protractor config file
+## Configure
 
+Your Protractor config file:
 ```
 var verTestReport = require('protractor-build-verification-testreport');
 var config = {
@@ -24,7 +25,7 @@ var config = {
 exports.config = config;
 ```
 
-A Protractor config file example in our example folder 
+The Protractor config file example provided in project
 ```
 var verTestReport = require('protractor-build-verification-testreport);
 var config = {
