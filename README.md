@@ -2,13 +2,11 @@
 
 ## Install 
 
-Install attanomat-protractor-screenshot into your node_modules
-
 ```
 npm install attanomat-protractor-screenshot --save 
 ```
 
-Configure attanomat-protractor-screenshot into your Protractor config file
+## Configure attanomat-protractor-screenshot in your Protractor config file
 
 ```
 var attanomatProtractorScreenshot = require('attanomat-protractor-screenshot');
@@ -73,7 +71,7 @@ The content consists of two parts
  1. Test information including TestDate, SpecStatus, SpecDescription, SpecFullName, Platform, and Browser.
  2. Screenshort using base64 image inline
 
-![Logo](https://github.com/vorachet/attanomat-protractor-screenshot/raw/master/example.png)
+![Logo](https://github.com/vorachet/attanomat-protractor-screenshot/raw/master/example.jpg)
 
 ## Doing Build verification test with attanomat-protractor-screenshot
 
