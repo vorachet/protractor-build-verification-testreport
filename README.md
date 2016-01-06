@@ -1,0 +1,1 @@
+# attanomat-protractor-screenshot
