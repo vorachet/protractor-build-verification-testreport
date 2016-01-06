@@ -5,19 +5,17 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vorachet/attanomat-protractor-screenshot.git"
+    "url": "git+https://github.com/vorachet/protractor-build-verification-testreport.git"
   },
   "keywords": [
     "Protractor",
     "Screenshot",
-    "Build verification test",
+    "Build verification test"
   ],
   "author": "Vorachet Jaroensawas <vorachet@gmail.com> (https://github.com/vorachet)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vorachet/attanomat-protractor-screenshot/issues"
+    "url": "https://github.com/vorachet/protractor-build-verification-testreport/issues"
   },
-  "homepage": "https://github.com/vorachet/attanomat-protractor-screenshot#readme",
-  "dependencies": {
-  }
+  "homepage": "https://github.com/vorachet/protractor-build-verification-testreport#readme"
 }
