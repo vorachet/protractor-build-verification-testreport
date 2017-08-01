@@ -64,6 +64,17 @@ $ cd node_modules/protractor-build-verification-testreport/example
 $ protractor conf.js
 ```
 
+You need Selenium and Protractor
+
+```
+wget https://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar
+java -jar selenium-server-standalone-2.53.1.jar
+```
+
+```
+sudo npm install -g protractor
+```
+
 ### The generated test report
 
 After you successfully run the spec example, you should get "3 specs, 1 failure" and a new folder named "screenshots" will be created after the Protractor job is done. The spec example intentially writes test cases for 2 passed and 1 failed.
