@@ -77,7 +77,7 @@ ProtractorBuildVerificationTestReport.prototype.onPrepare = function() {
                   '\t</head>\n' +
                   '\t<body>\n' +
                   '\t\t<p><b>TestDate</b> = ' + testDate + '</p>\n' +
-                  '\t\t<p><b>SpecID</b> = ' + testResultOnEachSpec.specID + '</p>\n' +
+                  '\t\t<p><b>SpecID</b> = ' + testResultOnEachSpec.specId + '</p>\n' +
                   '\t\t<p style="color:' + color + '"><b>SpecStatus</b> = ' + testResultOnEachSpec.specStatus + '</p>\n' +
                   '\t\t<p><b>SpecDescription</b> = ' + testResultOnEachSpec.specDescription + '</p>\n' +
                   '\t\t<p><b>SpecFullName</b> = ' +  testResultOnEachSpec.specFullName + '</p>\n' +
