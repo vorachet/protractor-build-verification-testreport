@@ -3,6 +3,7 @@ var verTestReport = require('../index.js');
 
 var config = {
   seleniumAddress: process.env.SELENIUM_ADDRESS || 'http://localhost:4444/wd/hub',
+  directConnect: true,
   capabilities: {
     'browserName': 'chrome'
   },
