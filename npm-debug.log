@@ -1,0 +1,110 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/vorachet/git/protractor-build-verification-testreport',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/vorachet/.npm/protractor-build-verification-testreport/0.0.6/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/vorachet/.npm correctMkdir not in flight; initializing
+10 info lifecycle protractor-build-verification-testreport@0.0.6~prepublish: protractor-build-verification-testreport@0.0.6
+11 silly lifecycle protractor-build-verification-testreport@0.0.6~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/vorachet/.npm/protractor-build-verification-testreport/0.0.6/package.tgz',
+12 verbose tar pack   '/Users/vorachet/git/protractor-build-verification-testreport' ]
+13 verbose tarball /Users/vorachet/.npm/protractor-build-verification-testreport/0.0.6/package.tgz
+14 verbose folder /Users/vorachet/git/protractor-build-verification-testreport
+15 verbose addLocalTarball adding from inside cache /Users/vorachet/.npm/protractor-build-verification-testreport/0.0.6/package.tgz
+16 verbose correctMkdir /Users/vorachet/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd protractor-build-verification-testreport@0.0.6
+18 verbose afterAdd /Users/vorachet/.npm/protractor-build-verification-testreport/0.0.6/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/vorachet/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/vorachet/.npm/protractor-build-verification-testreport/0.0.6/package/package.json written
+21 silly publish { name: 'protractor-build-verification-testreport',
+21 silly publish   version: '0.0.6',
+21 silly publish   description: 'A Node.js module used to generate readability HTML test report based on Protractor environment',
+21 silly publish   main: 'index.js',
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/vorachet/protractor-build-verification-testreport.git' },
+21 silly publish   keywords: [ 'Protractor', 'Screenshot', 'Build verification test' ],
+21 silly publish   author:
+21 silly publish    { name: 'Vorachet Jaroensawas',
+21 silly publish      email: 'vorachet@gmail.com',
+21 silly publish      url: 'https://github.com/vorachet' },
+21 silly publish   license: 'MIT',
+21 silly publish   bugs: { url: 'https://github.com/vorachet/protractor-build-verification-testreport/issues' },
+21 silly publish   homepage: 'https://github.com/vorachet/protractor-build-verification-testreport#readme',
+21 silly publish   readme: '# protractor-build-verification-testreport\n\nBuild verification test (Smoke testing ,Confidence testing, Sanity testing) is done by testers before accepting a new build. Build verification test is also one of the most cost-effective method for identifying and fixing defects in software.\n\n**protractor-build-verification-testreport** provides a Node.js module used to generate readability HTML test report based on Protractor environment.  If Protractor is an equipment in your build verification test process, **protractor-build-verification-testreport** could help you doing test report tasks effectively.\n\n![Logo](https://github.com/vorachet/attanomat-protractor-screenshot/raw/master/demo.gif)\n\n## Install\n\n```\nnpm install protractor-build-verification-testreport --save-dev\n```\n\n## Configure\n\nYour Protractor config file:\n```\nvar verTestReport = require(\'protractor-build-verification-testreport\');\nvar config = {\n  ...\n  onPrepare: verTestReport.onPrepare,\n};\n\nexports.config = config;\n```\n\nThe Protractor config file example provided in project\n```\nvar verTestReport = require(\'protractor-build-verification-testreport);\nvar config = {\n  seleniumAddress: process.env.SELENIUM_ADDRESS || \'http://localhost:4444/wd/hub\',\n  directConnect: true,\n  capabilities: {\n    \'browserName\': \'chrome\'\n  },\n  framework: \'jasmine2\',\n  specs: [\'spec.js\'],\n  onPrepare: verTestReport.onPrepare,\n};\n\nexports.config = config;\n```\n## Learning by example\n\n### Spec example\n\nProtractor config file and spec example are provided in example folder.\n\n```\n<YourNodeProject>\n  ...\n  /node_modules\n      /protractor-build-verification-testreport\n          /example/\n            conf.js\n            spec.js\n```\n\n### Run test\n```\n$ cd <YourNodeProject>\n$ cd node_modules/protractor-build-verification-testreport/example\n$ protractor conf.js\n```\n\n### The generated test report\n\nAfter you successfully run the spec example, you should get "3 specs, 1 failure" and a new folder named "screenshots" will be created after the Protractor job is done. The spec example intentially writes test cases for 2 passed and 1 failed.\n\nThe screenshots folder consists of a collection of generated HTML files. The number of the HTML files depends on the number of your specs. Each spec will generate one HTML test report. With this example, protractor-build-verification-testreport will generate 3 HTML files.\n\n```\n<YourNodeProject>\n  ...\n  /node_modules\n      /protractor-build-verification-testreport\n          /example/\n             conf.js\n             spec.js\n             /screenshots\n                  spec0_passed_Mac OS X_chrome_59.0.3071.115_Tue Aug 01 2017 09:02:39 GMT+0700 (+07).html\n                  spec1_passed_Mac OS X_chrome_59.0.3071.115_Tue Aug 01 2017 09:02:42 GMT+0700 (+07).html\n                  spec2_failed_Mac OS X_chrome_59.0.3071.115_Tue Aug 01 2017 09:02:44 GMT+0700 (+07).html\n```\n\n### Information in the file\n\nFilename pattern\n```\n{SpecID}_{TestStatus}_{OSPlatform}_{BrowserName}_{BrowserVersion}_{DateTime}.html\n```\n\nFilename examples\n\n```\nspec0_passed_Mac OS X_chrome_59.0.3071.115_Tue Aug 01 2017 09:02:39 GMT+0700 (+07).html\nspec1_passed_Mac OS X_chrome_59.0.3071.115_Tue Aug 01 2017 09:02:42 GMT+0700 (+07).html\nspec2_failed_Mac OS X_chrome_59.0.3071.115_Tue Aug 01 2017 09:02:44 GMT+0700 (+07).html\n```\n\n### Example HTML content\n\nThe content consists of two parts\n 1. Test information including TestDate, SpecStatus, SpecDescription, SpecFullName, Platform, and Browser.\n 2. Screenshort using base64 image inline\n\n![Logo](https://github.com/vorachet/protractor-build-verification-testreport/raw/master/exampleReport.png)\n\n## Doing build verification test with protractor-build-verification-testreport\n\nprotractor-build-verification-testreport offers a very small node.js module to generate readability E2E test report. The generated HTML files will be saved in the screenshots folder and you can choose to share the screenshots folder as deployment acceptance criteria among the project team. The content of the report is adequate for precise communication with general web application testing.  You can also choose to attach the test report into your software configuration management software.\n\n\n## License\n\n\nThe MIT License (MIT)\n\nCopyright (c) 2016 Vorachet Jaroensawas\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the "Software"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\n\n\nProject page is available at [http://vorachet.github.io/protractor-build-verification-testreport](http://vorachet.github.io/protractor-build-verification-testreport)\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '4170937c8c9f593ee5dcb21a6a3e6bb42e70d7c4',
+21 silly publish   _id: 'protractor-build-verification-testreport@0.0.6',
+21 silly publish   scripts: {},
+21 silly publish   _shasum: '11a60f7508ce578e728f279f84eb1a1cb4d750e8',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name protractor-build-verification-testreport
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'protractor-build-verification-testreport',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'protractor-build-verification-testreport',
+26 silly mapToRegistry   name: 'protractor-build-verification-testreport',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/protractor-build-verification-testreport
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /Users/vorachet/.npm/protractor-build-verification-testreport/0.0.6/package.tgz
+30 verbose request uri https://registry.npmjs.org/protractor-build-verification-testreport
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 9:28:46 AM
+33 verbose request using bearer token for auth
+34 verbose request id aa9cb81a48182750
+35 http request PUT https://registry.npmjs.org/protractor-build-verification-testreport
+36 http 403 https://registry.npmjs.org/protractor-build-verification-testreport
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Tue, 01 Aug 2017 02:28:49 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-sin18020-SIN',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1501554527.914683,VS0,VE2813',
+37 verbose headers   vary: 'Accept-Encoding, Accept' }
+38 verbose request invalidating /Users/vorachet/.npm/registry.npmjs.org/protractor-build-verification-testreport on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 0.0.6." : protractor-build-verification-testreport
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1044:10)
+40 verbose stack     at emitOne (events.js:96:13)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:965:12)
+41 verbose statusCode 403
+42 verbose pkgid protractor-build-verification-testreport
+43 verbose cwd /Users/vorachet/git/protractor-build-verification-testreport
+44 error Darwin 16.6.0
+45 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+46 error node v6.9.1
+47 error npm  v3.10.8
+48 error code E403
+49 error "You cannot publish over the previously published version 0.0.6." : protractor-build-verification-testreport
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
