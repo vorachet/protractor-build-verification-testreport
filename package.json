@@ -1,6 +1,6 @@
 {
   "name": "protractor-build-verification-testreport",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A Node.js module used to generate readability HTML test report based on Protractor environment",
   "main": "index.js",
   "repository": {

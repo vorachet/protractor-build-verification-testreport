@@ -9,7 +9,7 @@ Build verification test (Smoke testing ,Confidence testing, Sanity testing) is d
 ## Install
 
 ```
-npm install protractor-build-verification-testreport --save
+npm install protractor-build-verification-testreport --save-dev
 ```
 
 ## Configure
