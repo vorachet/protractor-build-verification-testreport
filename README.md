@@ -19,7 +19,7 @@ npm install -g protractor
 sudo webdriver-manager update
 ```
 
-## Configure
+## How to Configure
 
 Your Protractor config file:
 ```
@@ -32,14 +32,18 @@ var config = {
 exports.config = config;
 ```
 
-The Protractor config file example provided in project
+
+## Configuration example
 ```
 var verTestReport = require('protractor-build-verification-testreport);
-var config = {
-  seleniumAddress: process.env.SELENIUM_ADDRESS || 'http://localhost:4444/wd/hub',
+const config = {
   directConnect: true,
   capabilities: {
-    'browserName': 'chrome'
+    browserName: 'chrome'
+    //screencapture does not support headless option
+    //chromeOptions: {
+    //    args: [ "--headless", "--disable-gpu", "--window-size=800,600" ]
+    //}
   },
   framework: 'jasmine2',
   specs: ['spec.js'],
