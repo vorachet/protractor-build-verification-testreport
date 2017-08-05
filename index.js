@@ -1,6 +1,8 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
+const dateFormat = require('dateformat');
 
 const ProtractorBuildVerificationTestReport = function() {
 };
@@ -8,7 +10,7 @@ const ProtractorBuildVerificationTestReport = function() {
 ProtractorBuildVerificationTestReport.prototype.onPrepare = function() {
     jasmine.getEnv().addReporter({
           specDone: function(result) {
-            var screenshotDir = './screenshots';
+            var screenshotDir = 'screenshots';
             browser.takeScreenshot().then(function(base64png) {
               browser.getCapabilities().then(function(capabilities) {
                 /*
@@ -57,10 +59,10 @@ ProtractorBuildVerificationTestReport.prototype.onPrepare = function() {
                                     testResultOnEachSpec.platform + '_' +
                                     testResultOnEachSpec.browser + '_' +
                                     testResultOnEachSpec.version + '_' +
-                                    testDate;
+                                    dateFormat(testDate, "yyyy-mm-dd HHMMss");
 
                 console.log("imageFileName", imageFileName)
-                const screenshotFilePath = screenshotDir + '/' + imageFileName + '.png';
+                const screenshotFilePath = path.join(screenshotDir,imageFileName + '.png');
 
                 const description = '<html>\n' +
                   '\t<head>\n' +

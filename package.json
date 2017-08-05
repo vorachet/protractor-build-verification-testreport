@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/vorachet/protractor-build-verification-testreport/issues"
   },
-  "homepage": "https://github.com/vorachet/protractor-build-verification-testreport#readme"
+  "homepage": "https://github.com/vorachet/protractor-build-verification-testreport#readme",
+  "dependencies": {
+    "dateformat": "^2.0.0"
+  }
 }
